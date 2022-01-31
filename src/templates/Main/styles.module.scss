@@ -1,0 +1,35 @@
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 2rem 0;
+    align-self: center;
+  }
+
+  &__list {
+    animation: fill-animation 0.2s cubic-bezier(1, 1, 1, 1) 0s forwards;
+
+    padding: 0 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-flow: dense;
+
+    @media (max-width: 478px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@keyframes fill-animation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
